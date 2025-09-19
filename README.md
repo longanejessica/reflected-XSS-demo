@@ -95,8 +95,10 @@ Button link leads to the vulnerable `index.html` page with XSS payload injected.
 ## ⚠️ Legal Disclaimer
 
 Made by Jessica (2025)
-\nThis project is for educational and ethical hacking demonstrations **only**.
-\nDo not deploy this code against real services or users. Always have authorization.
+
+This project is for educational and ethical hacking demonstrations **only**.
+
+Do not deploy this code against real services or users. Always have authorization.
 
 ---
 
