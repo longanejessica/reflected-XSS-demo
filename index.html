@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DemoPost</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+    }
+    #container {
+      border: 1px solid #ccc;
+      padding: 30px;
+      width: 500px;
+      margin: auto;
+      border-radius: 10px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 80%;
+    }
+    button {
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Welcome to Bpost</h1>
+    <p>Track your parcel easily below:</p>
+    <input type="text" id="trackInput" placeholder="Enter your tracking ID">
+    <br>
+    <button onclick="submitTracking()">Track</button>
+    <p><strong>Tracking ID:</strong></p>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function submitTracking() {
+      const input = document.getElementById("trackInput").value;
+      const encoded = encodeURIComponent(input);
+      window.location.href = window.location.pathname + "?trackid=" + encoded;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const trackid = params.get("trackid");
+    if (trackid) {
+      // Décodage et injection dans la page (vulnérabilité XSS ici)
+      document.getElementById("result").innerHTML = decodeURIComponent(trackid);
+      document.getElementById("trackInput").value = decodeURIComponent(trackid);
+    }
+  </script>
+</body>
+</html>
